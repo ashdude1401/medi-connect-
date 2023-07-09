@@ -14,7 +14,7 @@ import ForgotPassword from './components/ForgotPassword';
 import Profile from "./components/Profile";
 import OrgProfile from "./components/OrgProfile";
 import ProfilePage from './components/ProfilePage';
-
+import Procedure from './components/Procedure';
 
 export default function App() {
   return (
@@ -22,7 +22,7 @@ export default function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" exact element={<><Hero/> <About/> <Contact /></>} />
+          <Route path="/" exact element={<><Hero/> <About/> <Procedure/> <Contact /></>} />
           <Route path="/signupOrg" exact element={<SignupOrg />} />
           <Route path="/signup" exact element={<SignupUser />}/>
           <Route path="/login" exact element={<Login />} />
