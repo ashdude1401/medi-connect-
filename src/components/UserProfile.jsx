@@ -29,11 +29,10 @@ const UserProfile = () => {
         <button onClick={() => {navigate('/changePassword')}}
         className="text-md rounded-full bg-violet-500 px-4 py-2 font-medium mx-5 my-5 text-white transition-all disabled:bg-gray-400
         hover:bg-violet-600">
-        Change Password
-        </button>
+              Change Password
+            </button>
+          </div>
         </div>
-
-      </div>
         <div className="bg-violet-500 rounded-lg col-span-6 font-heading text-white p-3">
         <div className='font-semibold mb-4'>User Details</div>
         <div>Name : {name}</div>
@@ -58,7 +57,7 @@ const UserProfile = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default UserProfile;
