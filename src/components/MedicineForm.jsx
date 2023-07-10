@@ -1,12 +1,65 @@
 import React, { useState } from "react";
-
+import cloudinary from "cloudinary-core";
 const MedicineForm = () => {
-  const [name,setName]=useState('')
-  const [quantity,setQuantity]=useState(0);
-  const [expiry,setExpiry]=useState('');
-  const [condition,setCondition]=useState('');
-  const [type,setType]=useState('');
-  
+  const [name, setName] = useState("");
+  const [quantity, setQuantity] = useState(0);
+  const [image, setImage] = useState("");
+  const [expiry, setExpiry] = useState("");
+  const [condition, setCondition] = useState("");
+  const [type, setType] = useState("");
+
+  const cloudinaryInstance = cloudinary.Cloudinary.new({
+    cloud_name: "dfoeek1tl",
+  });
+
+  const handleImageUpload = async (e) => {
+    console.log(e.target.files[0]);
+    console.log(cloudinaryInstance);
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "c2m8de2d");
+    fetch("https://api.cloudinary.com/v1_1/dfoeek1tl/image/upload", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((data) => setImage(data.secure_url))
+      .catch((err) => console.log(err));
+    // const response = await cloudinaryInstance.uploader.upload(formData, {
+    //   upload_preset: "c2m8de2d ",
+    // });
+    // console.log(response);
+    // setImage(response.secure_url);
+  };
+  const createMedicine = () => {
+    const user = JSON.parse(localStorage.getItem("credentials"));
+    const token = user.token;
+    const id = user.user._id;
+    const data = {
+      name,
+      quantity,
+      expiryDate: expiry,
+      image,
+      condition,
+      type,
+      uploadedBy: id,
+      availableQuantity: quantity,
+    };
+    fetch("http://localhost:3000/api/donateMedicine", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+        Cookie: "token=" + token,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+    console.log(data);
+  };
+
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div
@@ -22,7 +75,9 @@ const MedicineForm = () => {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Enter medicine details
             </h1>
-            <form className="space-y-4 md:space-y-6">
+            <form
+              className="space-y-4 md:space-y-6"
+              onSubmit={(e) => e.preventDefault()}>
               <div>
                 <label
                   htmlFor="nameMed"
@@ -125,6 +180,7 @@ const MedicineForm = () => {
                   accept="image/*"
                   name="image"
                   id="image"
+                  onChange={handleImageUpload}
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="John Doe"
                   required={true}
@@ -132,7 +188,7 @@ const MedicineForm = () => {
               </div>
 
               <button
-                type="submit"
+                onClick={createMedicine}
                 className="w-full text-white bg-violet-600 hover:bg-violet-700 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-700 dark:focus:ring-violet-800">
                 Submit Medicine Details
               </button>

@@ -35,6 +35,9 @@ export default function App() {
           <Route path="/signup" exact element={<SignUpChoice />} />
           <Route path="/login" exact element={<Login />} />
           <Route path="/userProfile" exact element={<UserProfile />} />
+          <Route path="/resetPassword" exact element={<ResetPassword />} />
+          <Route path="/forgotPassword" exact element={<ForgotPassword />} />
+          <Route path="/donateMedicine" exact element={<MedicineForm />} />
           <Route
             path="/medicineDashboard"
             exact
@@ -50,10 +53,6 @@ export default function App() {
       {/* <Login /> */}
       {/* <SignupUser /> */}
       {/* <SignupOrg /> */}
-      <MedicineForm />
-      {/* <ResetPassword /> */}
-      {/* <ForgotPassword /> */}
-      {/* <Footer /> */}
     </>
   );
 }
