@@ -1,0 +1,34 @@
+{
+	"networks": {
+		"emulator": "127.0.0.1:3569",
+		"mainnet": "access.mainnet.nodes.onflow.org:9000",
+		"sandboxnet": "access.sandboxnet.nodes.onflow.org:9000",
+		"testnet": "access.devnet.nodes.onflow.org:9000"
+	},
+	"contracts":{
+		"HelloWorld": "./contracts/HelloWorld.cdc"
+	},
+	"accounts": {
+		"emulator-account": {
+			"address": "f8d6e0586b0a20c7",
+			"key": "f7245e178b3318f79f36bc6a3af42bf645da725c8ad76e46546433128187fa3d"
+		},
+		"testnet-account":{
+			"address":"0x5e64c0c383365589",
+			"key":{
+				"type":"hex",
+				"index":0,
+				"signatureAlgorithm":"ECDSA_P256",
+				"hashAlgorithm":"SHA3_256",
+				"privateKey":"96c61dab5d62fb4e7fc847e4fac6c5871fec00cb66d9f8cd6baeb2a75ecc03ff"
+			}
+		},
+		"deployments":{
+			"testnet":{
+				"testnet-account":[
+					"HelloWorld"
+				]
+			}
+		}
+	}
+}
