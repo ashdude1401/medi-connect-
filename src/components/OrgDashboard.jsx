@@ -8,10 +8,7 @@ const OrgDashboard = () => {
         quantity: 5,
         image: "Sample image"
     }
-    const { name, expiryDate, quantity, image } = res;
-    const handleBook = () => {
-        
-    }
+    const { name, type, contactPerson, email, phone, address } = res;
 
     //Search funtionality
     const [data, setData] = useState([]); //medicine data from backend
@@ -42,7 +39,7 @@ const OrgDashboard = () => {
   return (
     <>
       <div className="text-4xl flex justify-center p-4 font-semibold">
-        Medicine Dashboard
+        Organisation Dashboard
       </div>
       <section className="container mx-auto px-4">
         <div className="m-6 md:flex md:items-center md:justify-between">
@@ -73,44 +70,50 @@ const OrgDashboard = () => {
           </div>
 
         </div>
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div className="relative overflow-x-auto shadow-md sm:rounded-lg mb-7">
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
                 <th scope="col" className="px-6 py-3">
-                    Name of the medicine
+                    Name of the organisation
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Expiry Date
+                    Type
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Quantity
+                    Contact
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    Image
+                    Email
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    <span className="sr-only">Book</span>
+                    Phone
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    Address
                 </th>
             </tr>
         </thead>
         <tbody>
-            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+            <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 mb-6">
+                <td scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                     {name}
-                </th>
-                <td className="px-6 py-4">
-                    {expiryDate}
                 </td>
                 <td className="px-6 py-4">
-                    {quantity}
+                    {type}
                 </td>
                 <td className="px-6 py-4">
-                    {image}
+                    {contactPerson}
                 </td>
-                <td className="px-6 py-4 text-right">
-                    <a href="/bookMedicine" className="font-medium text-violet-600 dark:text-violet-500 hover:underline">Book</a>
+                <td className="px-6 py-4">
+                    {email}
                 </td>
+                <td className="px-6 py-4">
+                    {phone}
+                </td>
+                <td className="px-6 py-4">
+                    {address}
+                </td>             
             </tr>
         </tbody>
     </table>

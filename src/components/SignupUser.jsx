@@ -55,14 +55,14 @@ const SignupUser = () => {
   }
 
   return (
-    <section className=" bg-violet-500 bg-gray-50 dark:bg-gray-900">
+    <section className=" bg-violet-500 dark:bg-gray-900">
       <div
         className="flex flex-col items-center justify-center px-6 mx-auto lg:py-0"
-        style={{ paddingTop: '3rem', paddingBottom: '3rem' }}
+        style={{ paddingTop: '3rem', paddingBottom: '3rem', width: '700px' }}
       >
         <a
           href="/"
-          className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+          className="flex items-center mb-6 text-2xl font-heading font-semibold text-white dark:text-white"
         >
           Get Started Today!
         </a>
@@ -78,7 +78,7 @@ const SignupUser = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Name
                 </label>
@@ -95,7 +95,7 @@ const SignupUser = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Email
                 </label>
@@ -112,7 +112,7 @@ const SignupUser = () => {
               <div>
                 <label
                   htmlFor="password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Password
                 </label>
@@ -137,7 +137,7 @@ const SignupUser = () => {
               <div>
                 <label
                   htmlFor="confirm-password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Confirm password
                 </label>
@@ -162,7 +162,7 @@ const SignupUser = () => {
               <div>
                 <label
                   htmlFor="address"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Address
                 </label>
@@ -179,7 +179,7 @@ const SignupUser = () => {
               <div>
                 <label
                   htmlFor="city"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   City
                 </label>
@@ -196,7 +196,7 @@ const SignupUser = () => {
               <div>
                 <label
                   htmlFor="state"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   State
                 </label>
@@ -213,7 +213,7 @@ const SignupUser = () => {
               <div>
                 <label
                   htmlFor="country"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Country
                 </label>
@@ -230,7 +230,7 @@ const SignupUser = () => {
               <div>
                 <label
                   htmlFor="pincode"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Pincode
                 </label>
@@ -247,7 +247,7 @@ const SignupUser = () => {
               <div>
                 <label
                   htmlFor="phone"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Phone
                 </label>
@@ -295,7 +295,7 @@ const SignupUser = () => {
               </button>
 
               <div className="px-6 sm:px-0 max-w-sm">
-                <button className="text-gray-800 w-full  bg-violet-100 hover:bg-violet-200 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-left dark:focus:ring-violet-300 mr-2 mb-2">
+                <button className="text-gray-800 w-full  bg-violet-100 hover:bg-violet-200 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-left dark:focus:ring-violet-300 mr-2 font-heading mb-2">
                   <svg className="mr-2 ml-24 w-6 h-5" viewBox="0 0 533.5 544.3">
                     <path
                       d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z"

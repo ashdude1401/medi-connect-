@@ -68,14 +68,14 @@ const SignupOrg = () => {
   }
 
   return (
-    <section className=" bg-violet-500 bg-gray-50 dark:bg-gray-900">
+    <section className=" bg-violet-500 dark:bg-gray-900">
       <div
         className="flex flex-col items-center justify-center px-6 mx-auto lg:py-0"
         style={{ paddingTop: '3rem', paddingBottom: '3rem' }}
       >
         <a
           href="/"
-          className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+          className="flex items-center text-gray-100 font-heading mb-6 text-2xl font-semibold dark:text-white"
         >
           Get Started Today!
         </a>
@@ -91,7 +91,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="nameOrg"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Name of organization
                 </label>
@@ -108,7 +108,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="type"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Type
                 </label>
@@ -128,7 +128,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="name"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Name of contact person
                 </label>
@@ -146,7 +146,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Email
                 </label>
@@ -163,7 +163,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Password
                 </label>
@@ -188,7 +188,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="confirm-password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Confirm password
                 </label>
@@ -213,7 +213,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="address"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Address
                 </label>
@@ -230,7 +230,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="city"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   City
                 </label>
@@ -247,7 +247,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="state"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   State
                 </label>
@@ -264,7 +264,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="country"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Country
                 </label>
@@ -281,7 +281,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="pincode"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Pincode
                 </label>
@@ -298,7 +298,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="phone"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Phone
                 </label>
@@ -315,7 +315,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="website"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Website
                 </label>
@@ -332,7 +332,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="motto"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Motto
                 </label>
@@ -349,7 +349,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="certificate"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Certificate
                 </label>
@@ -366,7 +366,7 @@ const SignupOrg = () => {
               <div>
                 <label
                   htmlFor="tNc"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  className="block text-left font-heading mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Terms and Conditions
                 </label>
