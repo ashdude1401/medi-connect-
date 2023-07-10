@@ -13,10 +13,10 @@ MediConnect is a revolutionary web app that aims to bridge the gap between indiv
 
 Together, let's transform surplus medicines into life-changing donations. Join MediConnect today and be a part of our mission to empower health and save lives.</p>
       <div className="flex justify-center">
-      <button
+      {/* <button
         className="text-md rounded-full bg-transparent px-4 py-2 font-medium text-violet-500 transition-all disabled:bg-gray-400 border border-violet-500 hover:bg-violet-500 hover:text-white">
         Know More
-      </button>
+      </button> */}
       </div>
     </div>
     <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">

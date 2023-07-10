@@ -16,6 +16,7 @@ import UserProfile from "./components/UserProfile";
 import Procedure from "./components/Procedure";
 import OrgDashboard from "./components/OrgDashboard";
 import MedicineDashboard from "./components/MedicineDashboard";
+import UpdateProfile from "./components/UpdateProfile";
 
 export default function App() {
   return (
@@ -38,6 +39,11 @@ export default function App() {
           <Route path="/userProfile" exact element={<UserProfile />} />
           <Route path="/medicineDashboard" exact element={<MedicineDashboard/>}/>
           <Route path="/organizationDashboard" exact element={<OrgDashboard />}/>
+          <Route path="/updateProfile" exact element={<UpdateProfile />}/>
+          <Route path="/resetPassword" exact element={<ResetPassword />}/>
+          <Route path="/forgotPassword" exact element={<ForgotPassword />}/>
+          <Route path="/medicineForm" exact element={<MedicineForm />}/>
+          <Route path="/bookMedicine" exact element={<MedicineDashboard />}/>
         </Routes>
         <Footer />
         {/* <ProfilePage/> */}
@@ -48,7 +54,7 @@ export default function App() {
       {/* <Login /> */}
       {/* <SignupUser /> */}
       {/* <SignupOrg /> */}
-      <MedicineForm />
+      {/* <MedicineForm /> */}
       {/* <ResetPassword /> */}
       {/* <ForgotPassword /> */}
       {/* <Footer /> */}
