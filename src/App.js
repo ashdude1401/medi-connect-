@@ -40,7 +40,7 @@ export default function App() {
           <Route path="/medicineDashboard" exact element={<MedicineDashboard/>}/>
           <Route path="/organizationDashboard" exact element={<OrgDashboard />}/>
           <Route path="/updateProfile" exact element={<UpdateProfile />}/>
-          <Route path="/resetPassword" exact element={<ResetPassword />}/>
+          <Route path="/changePassword" exact element={<ResetPassword />}/>
           <Route path="/forgotPassword" exact element={<ForgotPassword />}/>
           <Route path="/medicineForm" exact element={<MedicineForm />}/>
           <Route path="/bookMedicine" exact element={<MedicineDashboard />}/>
