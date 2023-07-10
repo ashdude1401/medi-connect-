@@ -6,6 +6,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Login from './components/Login';
+import SignUpChoice from './components/SignUpChoice';
 import SignupUser from './components/SignupUser';
 import SignupOrg from './components/SignupOrg';
 import MedicineForm from './components/MedicineForm';
@@ -24,10 +25,10 @@ export default function App() {
         <Routes>
           <Route path="/" exact element={<><Hero/> <About/> <Procedure/> <Contact /></>} />
           <Route path="/signupOrg" exact element={<SignupOrg />} />
-          <Route path="/signup" exact element={<SignupUser />}/>
+          <Route path="/signup" exact element={<SignUpChoice />}/>
           <Route path="/login" exact element={<Login />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
         {/* <ProfilePage/> */}
       </Router>
       {/* <Hero />
@@ -36,7 +37,7 @@ export default function App() {
       {/* <Login /> */}
       {/* <SignupUser /> */}
       {/* <SignupOrg /> */}
-      {/* <MedicineForm /> */}
+      <MedicineForm />
       {/* <ResetPassword /> */}
       {/* <ForgotPassword /> */}
       {/* <Footer /> */}
