@@ -1,19 +1,52 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 const Login = () => {
-  const [email,setEmail] = useState('')
-  const [password,setPassword] = useState('')
-  const handleSubmit =(e)=>{
-    console.log(email,password,e);
-    login();
-  }
+  //
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+  let name, value;
+
+  const handleChange = (e) => {
+    // console.log(e);
+    name = e.target.name;
+    value = e.target.value;
+
+    setUser({ ...user, [name]: value }); //
+  };
+
   const login = async () => {
-    const res = await axios.post(
-      "http://localhost:3000/api/login",
-      { email: email, password: password }
-    );
-    console.log(res);
+    try {
+      const { email, password } = user;
+
+      const res = await fetch("http://localhost:3000/api//login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // credentials: "same-origin",
+        body: JSON.stringify({
+          // parsing the data that is to be sent to server
+          email,
+          password,
+        }),
+      });
+
+      const response = await res.json();
+      console.log(response);
+      const dataa = JSON.stringify(response);
+
+      if (response.token) {
+        localStorage.setItem("credentials", dataa);
+        console.log(response.token);
+      }
+
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
@@ -28,7 +61,9 @@ const Login = () => {
             <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
               Sign in to your account
             </h1>
-            <form className="space-y-4 md:space-y-6" >
+            <form
+              className="space-y-4 md:space-y-6"
+              onSubmit={(e) => e.preventDefault()}>
               <div>
                 <label
                   htmlFor="email"
@@ -39,10 +74,11 @@ const Login = () => {
                   type="email"
                   name="email"
                   id="email"
+                  value={user.email}
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="name@organization.com"
                   required={true}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleChange}
                 />
               </div>
               <div>
@@ -56,9 +92,10 @@ const Login = () => {
                   name="password"
                   id="password"
                   placeholder="••••••••"
+                  value={user.password}
                   className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required={true}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={handleChange}
                 />
               </div>
               <div className="flex items-center justify-between">
@@ -87,8 +124,7 @@ const Login = () => {
                 </a>
               </div>
               <button
-                
-                onClick={(e)=>handleSubmit()}
+                onClick={login}
                 className="w-full text-white bg-violet-500 hover:bg-violet-600 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-violet-500 dark:hover:bg-violet-600 dark:focus:ring-violet-800">
                 Sign in
               </button>
