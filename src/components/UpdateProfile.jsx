@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-const UserProfile = () => {
+const UpdateProfile = () => {
   const [profile, setProfile] = useState(null)
   const [formData, setFormData] = useState({
     name: '',
@@ -32,7 +32,7 @@ const UserProfile = () => {
 
   const fetchUserProfile = async () => {
     try {
-      const response = await axios.get('https://example.com/api/user-profile')
+      const response = await axios.get('https://localhost:3000/api/me')
       const userProfile = response.data
       setProfile(userProfile)
       setFormData({
@@ -123,7 +123,7 @@ const UserProfile = () => {
   }
 
   return (
-    <div className="container mx-auto max-w-md p-6 bg-purple-100 rounded-md">
+    <div className="container mx-auto max-w-md p-6 bg-purple-100 rounded-md my-7">
       <h2 className="text-2xl font-bold mb-6 text-purple-800">User Profile</h2>
       {true ? (
         <form onSubmit={handleUpdateProfile}>
@@ -319,4 +319,4 @@ const PasswordChangeModal = ({ onClose, onSubmit }) => {
   )
 }
 
-export default UserProfile
+export default UpdateProfile;
