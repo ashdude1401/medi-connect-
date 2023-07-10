@@ -16,9 +16,9 @@ const medicineSchema = new mongoose.Schema(
       type: String,
       required: [true, "Please enter condition of the medicine"],
     },
-    quantity:{
-        type:Number,
-        required:[true,"Please enter quantity of the medicine"],
+    quantity: {
+      type: Number,
+      required: [true, "Please enter quantity of the medicine"],
     },
     image: {
       type: String,
@@ -40,8 +40,8 @@ const medicineSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["donated", "available"],
-      default: "available",
+      enum: ["available", "booked", "listed"],
+      default: "listed",
     },
     bookedQuantity: {
       type: Number,
@@ -49,7 +49,7 @@ const medicineSchema = new mongoose.Schema(
     },
     availableQuantity: {
       type: Number,
-      required:true,
+      required: true,
     },
   },
   { timestamps: true }
@@ -65,8 +65,8 @@ medicineSchema.methods.updateQuantity = function (quantity) {
   return this.save();
 };
 
-medicineSchema.pre("save",function(next){
-    this.availableQuantity =this.quantity - this.bookedQuantity;
-    next();
-})
+medicineSchema.pre("save", function (next) {
+  this.availableQuantity = this.quantity - this.bookedQuantity;
+  next();
+});
 module.exports = mongoose.model("Medicine", medicineSchema);

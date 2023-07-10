@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaLink } from "react-icons/fa";
-import logo from "../Logos/logo.png";
+import logo from "../Logos/logo-1.png";
 import { useNavigate } from "react-router-dom";
 // import SignupModal from '../components/SignupModal'
 const Navbar = () => {
