@@ -10,6 +10,7 @@ const Navbar = () => {
   }
   return (
     <nav className="bg-white px-6 py-2 shadow-lg">
+<<<<<<< HEAD
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <a href="/" className="flex items-center">
@@ -31,6 +32,21 @@ const Navbar = () => {
               >
                 Home
               </a>
+=======
+  <div className="flex items-center justify-between">
+    <div className="flex items-center">
+      <a href="/" className="flex items-center">
+        <img src={logo} className="w-16" alt="Header Logo" />
+        <p className="hidden self-center text-lg font-semibold sm:block pl-3">
+          Medi⇿Connect
+        </p>
+      </a>
+      <div className="hidden md:flex">
+        <div
+          className="flex flex-col gap-8 rounded-lg border border-gray-100 bg-black p-4 md:mt-0 md:flex-row md:border-0 md:bg-white md:text-sm md:font-medium" style={{paddingLeft: "200px", fontSize: "17px"}}>
+          <a href="#Home"
+            className="block rounded py-2 pr-4 pl-3 font-heading text-gray-700 hover:bg-gray-100 dark:text-black dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-violet-500 md:dark:hover:bg-transparent">Home</a>
+>>>>>>> 6433a5afdd5594d69de73f1606f678ed555a7c09
 
               <a
                 href="#aboutUs"

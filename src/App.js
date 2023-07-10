@@ -12,10 +12,9 @@ import SignupOrg from './components/SignupOrg';
 import MedicineForm from './components/MedicineForm';
 import ResetPassword from './components/ResetPassword';
 import ForgotPassword from './components/ForgotPassword';
-import Profile from "./components/Profile";
-import OrgProfile from "./components/OrgProfile";
-import ProfilePage from './components/ProfilePage';
+import UserProfile from './components/UserProfile';
 import Procedure from './components/Procedure';
+import MedicineDashboard from './components/MedicineDashboard';
 
 export default function App() {
   return (
@@ -27,9 +26,16 @@ export default function App() {
           <Route path="/signupOrg" exact element={<SignupOrg />} />
           <Route path="/signup" exact element={<SignUpChoice />}/>
           <Route path="/login" exact element={<Login />} />
+          <Route path="/userProfile" exact element={<UserProfile />} />
+          <Route path="/medicineDashboard" exact element={<MedicineDashboard/>} />
+          
         </Routes>
+<<<<<<< HEAD
         <Footer />
         {/* <ProfilePage/> */}
+=======
+        {/* <Footer /> */}
+>>>>>>> 6433a5afdd5594d69de73f1606f678ed555a7c09
       </Router>
       {/* <Hero />
       <About />
@@ -41,8 +47,6 @@ export default function App() {
       {/* <ResetPassword /> */}
       {/* <ForgotPassword /> */}
       {/* <Footer /> */}
-      {/* <Profile />
-      <OrgProfile /> */}
     </>
   )
 }
