@@ -14,6 +14,7 @@ import ResetPassword from "./components/ResetPassword";
 import ForgotPassword from "./components/ForgotPassword";
 import UserProfile from "./components/UserProfile";
 import Procedure from "./components/Procedure";
+import OrgDashboard from "./components/OrgDashboard";
 import MedicineDashboard from "./components/MedicineDashboard";
 
 export default function App() {

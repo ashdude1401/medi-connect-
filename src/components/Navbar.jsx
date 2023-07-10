@@ -25,25 +25,25 @@ const Navbar = () => {
               className="flex flex-col gap-8 rounded-lg border border-gray-100 bg-black p-4 md:mt-0 md:flex-row md:border-0 md:bg-white md:text-sm md:font-medium"
               style={{ paddingLeft: "200px", fontSize: "17px" }}>
               <a
-                href="#"
+                href="/" onClick={() => navigate("/")} 
                 className="block rounded py-2 pr-4 pl-3 font-heading text-gray-700 hover:bg-gray-100 dark:text-black dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-violet-500 md:dark:hover:bg-transparent">
                 Home
               </a>
 
               <a
-                href="#aboutUs"
+                href="#aboutUs" onClick={() => navigate("/")}
                 className="block rounded py-2 pr-4 pl-3 font-heading text-gray-700 hover:bg-gray-100 dark:text-black dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-violet-500 md:dark:hover:bg-transparent">
                 About Us
               </a>
 
               <a
-                href="#procedure"
+                href="#procedure" onClick={() => navigate("/")}
                 className="block rounded py-2 pr-4 pl-3 font-heading text-gray-700 hover:bg-gray-100 dark:text-black dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-violet-500 md:dark:hover:bg-transparent">
                 Procedure
               </a>
 
               <a
-                href="#contactUs"
+                href="#contactUs" onClick={() => navigate("/")}
                 className="block rounded py-2 pr-4 pl-3 font-heading text-gray-700 hover:bg-gray-100 dark:text-black dark:hover:bg-gray-700 dark:hover:text-white md:border-0 md:p-0 md:hover:bg-transparent md:hover:text-violet-500 md:dark:hover:bg-transparent">
                 Contact Us
               </a>

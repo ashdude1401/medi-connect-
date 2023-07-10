@@ -1,30 +1,34 @@
-import React from "react";
-import { useState } from "react";
+import React from 'react'
+import { useState } from 'react'
+import { FaEyeSlash, FaEye } from 'react-icons/fa'
+import '../styles/ShowPassword.css'
+
 // import axios from "axios";
 const Login = () => {
   //
   const [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
-  let name, value;
+    email: '',
+    password: '',
+  })
+
+  let name, value
 
   const handleChange = (e) => {
     // console.log(e);
-    name = e.target.name;
-    value = e.target.value;
+    name = e.target.name
+    value = e.target.value
 
-    setUser({ ...user, [name]: value }); //
-  };
+    setUser({ ...user, [name]: value }) //
+  }
 
   const login = async () => {
     try {
-      const { email, password } = user;
+      const { email, password } = user
 
-      const res = await fetch("http://localhost:3000/api//login", {
-        method: "POST",
+      const res = await fetch('http://localhost:3000/api//login', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         // credentials: "same-origin",
         body: JSON.stringify({
@@ -32,28 +36,36 @@ const Login = () => {
           email,
           password,
         }),
-      });
+      })
 
-      const response = await res.json();
-      console.log(response);
-      const dataa = JSON.stringify(response);
+      const response = await res.json()
+      console.log(response)
+      const dataa = JSON.stringify(response)
 
       if (response.token) {
-        localStorage.setItem("credentials", dataa);
-        console.log(response.token);
+        localStorage.setItem('credentials', dataa)
+        console.log(response.token)
       }
 
-      console.log(response);
+      console.log(response)
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
+  }
+
+  const [showPassword, setShowPassword] = useState(true)
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword)
+  }
+
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <a
           href="/"
-          className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
+          className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white"
+        >
           Welcome Back!
         </a>
         <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
@@ -63,11 +75,13 @@ const Login = () => {
             </h1>
             <form
               className="space-y-4 md:space-y-6"
-              onSubmit={(e) => e.preventDefault()}>
+              onSubmit={(e) => e.preventDefault()}
+            >
               <div>
                 <label
                   htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
                   Your email
                 </label>
                 <input
@@ -84,19 +98,27 @@ const Login = () => {
               <div>
                 <label
                   htmlFor="password"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
                   Password
                 </label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="••••••••"
-                  value={user.password}
-                  className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  required={true}
-                  onChange={handleChange}
-                />
+                <div className="password-input-wrapper ">
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    name="password"
+                    id="password"
+                    placeholder="atleast 8 characters"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-violet-600 focus:border-violet-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required={true}
+                    onChange={handleChange}
+                  />
+                  <button
+                    className="password-toggle-button"
+                    onClick={togglePasswordVisibility}
+                  >
+                    {!showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
               </div>
               <div className="flex items-center justify-between">
                 <div className="flex items-start">
@@ -112,27 +134,31 @@ const Login = () => {
                   <div className="ml-3 text-sm">
                     <label
                       htmlFor="remember"
-                      className="text-gray-500 dark:text-gray-300">
+                      className="text-gray-500 dark:text-gray-300"
+                    >
                       Remember me
                     </label>
                   </div>
                 </div>
                 <a
                   href="/forgotPassword"
-                  className="text-sm font-medium text-violet-500 hover:underline dark:text-violet-500">
+                  className="text-sm font-medium text-violet-500 hover:underline dark:text-violet-500"
+                >
                   Forgot password?
                 </a>
               </div>
               <button
                 onClick={login}
-                className="w-full text-white bg-violet-500 hover:bg-violet-600 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-violet-500 dark:hover:bg-violet-600 dark:focus:ring-violet-800">
+                className="w-full text-white bg-violet-500 hover:bg-violet-600 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-violet-500 dark:hover:bg-violet-600 dark:focus:ring-violet-800"
+              >
                 Sign in
               </button>
 
               <div className="px-6 sm:px-0 max-w-sm">
                 <button
                   type="submitbutton"
-                  className="text-gray-800 w-full  bg-violet-100 hover:bg-violet-200 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-left dark:focus:ring-violet-300 mr-2 mb-2">
+                  className="text-gray-800 w-full  bg-violet-100 hover:bg-violet-200 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-left dark:focus:ring-violet-300 mr-2 mb-2"
+                >
                   <svg className="mr-2 ml-24 w-6 h-5" viewBox="0 0 533.5 544.3">
                     <path
                       d="M533.5 278.4c0-18.5-1.5-37.1-4.7-55.3H272.1v104.8h147c-6.1 33.8-25.7 63.7-54.4 82.7v68h87.7c51.5-47.4 81.1-117.4 81.1-200.2z"
@@ -155,10 +181,11 @@ const Login = () => {
                 </button>
               </div>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don't have an account yet?{" "}
+                Don't have an account yet?{' '}
                 <a
                   href="/signup"
-                  className="font-medium text-violet-600 hover:underline dark:text-violet-500">
+                  className="font-medium text-violet-600 hover:underline dark:text-violet-500"
+                >
                   Sign up
                 </a>
               </p>
@@ -167,7 +194,7 @@ const Login = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login
