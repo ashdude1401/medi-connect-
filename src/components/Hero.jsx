@@ -1,9 +1,11 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import Mockup from '../images/hero-img2.png';
 import Pill from '../images/hero-pill.png';
 import './Hero.css';
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
 <section className='bg-violet-500'>
     <div className='grid max-w-screen-xl mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12'>
@@ -25,13 +27,15 @@ const Hero = () => {
 
          <div className="flex items-center lg:col-span-7 p-7 m-auto">
       <button
+        onClick={() => {navigate('/medicineForm')}}
         className="text-md rounded-full bg-white px-4 py-2 font-medium mx-5 text-violet-500 transition-all disabled:bg-gray-400 hover:bg-violet-50">
         Donate Medicine
       </button>
       <button
+        onClick={() => {navigate('/bookMedicine')}}
         className="text-md rounded-full bg-violet-500 px-4 py-2 font-medium text-white border border-white transition-all disabled:bg-gray-400
         hover:bg-violet-600">
-        Receive Medicine
+        Book Medicine
       </button>
     </div>
 
