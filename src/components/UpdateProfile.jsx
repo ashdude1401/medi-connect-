@@ -1,7 +1,7 @@
 //check line 70 and 104
 
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const UpdateProfile = () => {
   const [profile, setProfile] = useState(null)
