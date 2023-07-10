@@ -1,37 +1,38 @@
-import React from "react";
-import { useState } from "react";
-import { FaEyeSlash, FaEye } from "react-icons/fa";
-import "../styles/ShowPassword.css";
-
+import React from 'react'
+import { useState } from 'react'
+import { FaEyeSlash, FaEye } from 'react-icons/fa'
+import '../styles/ShowPassword.css'
+import { useNavigate } from 'react-router-dom'
 // import axios from "axios";
 const Login = () => {
+  const navigate = useNavigate()
   const [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
+    email: '',
+    password: '',
+  })
 
-  const [isOrg, setIsOrg] = useState(false);
+  const [isOrg, setIsOrg] = useState(false)
 
-  let name, value;
+  let name, value
 
   const handleChange = (e) => {
     // console.log(e);
-    name = e.target.name;
-    value = e.target.value;
+    name = e.target.name
+    value = e.target.value
 
-    setUser({ ...user, [name]: value }); //
-  };
+    setUser({ ...user, [name]: value }) //
+  }
 
   const login = async () => {
     try {
-      const { email, password } = user;
+      const { email, password } = user
       const link = isOrg
-        ? "http://localhost:3000/api/organization"
-        : "http://localhost:3000/api/login";
+        ? 'http://localhost:3000/api/organization/login'
+        : 'http://localhost:3000/api/login'
       const res = await fetch(link, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         // credentials: "same-origin",
         body: JSON.stringify({
@@ -39,28 +40,29 @@ const Login = () => {
           email,
           password,
         }),
-      });
+      })
 
-      const response = await res.json();
-      console.log(response);
-      const dataa = JSON.stringify(response);
+      const response = await res.json()
+      console.log(response)
+      const dataa = JSON.stringify(response)
 
       if (response.token) {
-        localStorage.setItem("credentials", dataa);
-        console.log(response.token);
+        localStorage.setItem('credentials', dataa)
+        console.log(response.token)
       }
 
-      console.log(response);
+      console.log(response)
     } catch (error) {
-      console.log(error);
+      console.log(error)
     }
-  };
+    navigate('/')
+  }
 
-  const [showPassword, setShowPassword] = useState(true);
+  const [showPassword, setShowPassword] = useState(true)
 
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+    setShowPassword(!showPassword)
+  }
 
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
@@ -107,7 +109,7 @@ const Login = () => {
                 </label>
                 <div className="password-input-wrapper ">
                   <input
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword ? 'text' : 'password'}
                     name="password"
                     id="password"
                     placeholder="atleast 8 characters"
@@ -130,7 +132,7 @@ const Login = () => {
                       id="remember"
                       aria-describedby="remember"
                       onChange={() => {
-                        setIsOrg(!isOrg);
+                        setIsOrg(!isOrg)
                       }}
                       type="checkbox"
                       className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-violet-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-violet-600 dark:ring-offset-gray-800"
@@ -187,7 +189,7 @@ const Login = () => {
                 </button>
               </div>
               <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                Don't have an account yet?{" "}
+                Don't have an account yet?{' '}
                 <a
                   href="/signup"
                   className="font-medium text-violet-600 hover:underline dark:text-violet-500"
@@ -200,7 +202,7 @@ const Login = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

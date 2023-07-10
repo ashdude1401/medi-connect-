@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { FaEyeSlash, FaEye } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
 
 const SignupUser = () => {
+  const navigate = useNavigate()
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -47,6 +49,7 @@ const SignupUser = () => {
     } catch (error) {
       console.log(error)
     }
+    navigate('/')
   }
   const [showPassword, setShowPassword] = useState(true)
 
